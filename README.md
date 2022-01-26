@@ -6,4 +6,4 @@ npm i
 npm rund dev
 
 #Information
-Based in "next-js-11-jwt-authentication-example"
+Based on "next-js-11-jwt-authentication-example"
