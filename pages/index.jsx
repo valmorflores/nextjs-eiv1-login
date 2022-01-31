@@ -9,7 +9,7 @@ function Home() {
     const [users, setUsers] = useState(null);
 
     useEffect(() => {
-       // userService.getAll().then(x => setUsers(x));
+       userService.getAll().then(x => setUsers(x));
     }, []);
 
     return (
@@ -21,7 +21,7 @@ function Home() {
                 {users &&
                     <ul>
                         {users.map(user =>
-                            <li key={user.username}>{user.username} {user.username}</li>
+                            <li key={user.email}>{user.firstname} {user.lastname}</li>
                         )}
                     </ul>
                 }

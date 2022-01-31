@@ -20,6 +20,7 @@ function login(email, password) {
     return fetchWrapper.post(`${baseUrl}/login`, { email, password })
         .then(user => {
             // publish user to subscribers and store in local storage to stay logged in between page refreshes
+            console.log(user);
             userSubject.next(user);
             localStorage.setItem('user', JSON.stringify(user));
 
@@ -34,12 +35,13 @@ function logout() {
     Router.push('/login');
 }
 
-function getAll() {
+async function getAll() {
     console.log('staff> getting information');
-    var data = fetchWrapper.get(`${baseUrl}/staff`);    
-    console.log(data);
+    var response = await fetchWrapper.get(`${baseUrl}/staff`);    
+    console.log(response.data);
     console.log('staff> do');
-    var users = [
+    var users = response.data;
+    /*[
         {
             "id": 1,
             "username": "test",
@@ -47,6 +49,9 @@ function getAll() {
             "firstName": "Test",
             "lastName": "User"
         }
-    ];
+    ];*/
     return users;
 }
+
+
+function getToken(){}
