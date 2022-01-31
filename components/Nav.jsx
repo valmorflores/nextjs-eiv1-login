@@ -22,7 +22,7 @@ function Nav() {
     
     return (
         <nav className="navbar navbar-expand navbar-dark bg-dark">
-            <div className="navbar-nav">
+            <div className="navbar-nav">                
                 <NavLink href="/" exact className="nav-item nav-link">Home</NavLink>
                 <a onClick={logout} className="nav-item nav-link">Logout</a>
             </div>
