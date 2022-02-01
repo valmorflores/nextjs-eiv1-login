@@ -1,5 +1,5 @@
 
-import { Fragment, useContext, useEffect } from 'react'
+import { Fragment, useContext, useEffect, useState } from 'react'
 import Head from 'next/head'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
@@ -18,7 +18,6 @@ function classNames(...classes) {
 
 import { NavLink } from '.';
 import { userService } from 'services';
-import { useState } from 'react/cjs/react.development'
 
 export { Nav };
 
