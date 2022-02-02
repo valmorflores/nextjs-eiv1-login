@@ -10,6 +10,7 @@ import { parseCookies } from 'nookies'
 //import { getAPIClient } from '../services/axios'
 
 const navigation = ['Dashboard', 'Team', 'Projects', 'Calendar', 'Reports']
+const routes = ['/dashboard','/menu','/example','/none','/menu']
 const profile = ['Your Profile', 'Settings']
 
 function classNames(...classes) {
@@ -70,18 +71,11 @@ function Nav() {
                                 itemIdx === 0 ? (
                                   <Fragment key={item}>
                                     {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                                    <a href="#" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">
-                                      {item}
-                                    </a>
+                                    <NavLink href={routes[itemIdx]} exact className="bg-gray-900 text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{item}</NavLink>
+                                    
                                   </Fragment>
-                                ) : (
-                                  <a
-                                    key={item}
-                                    href="#"
-                                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                                  >
-                                    {item}
-                                  </a>
+                                ) : (                                 
+                                  <NavLink href={routes[itemIdx]} exact className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{item}</NavLink>
                                 )
                               )}
                             </div>
